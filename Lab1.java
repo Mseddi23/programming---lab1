@@ -1,42 +1,42 @@
 public class Lab1 {
     public static void main(String[] args) {
 
-        short[] z = new short[11];
-        for (int i = 0; i < z.length; i++) {
-            z[i] = (short) (4 + 2 * i);
-        }
-
-        double[] x = new double[17];
-        for (int i = 0; i < x.length; i++) {
-            x[i] = (-2.0 + Math.random() * 7.0);
-        }
-
-        double[][] e = new double[11][17];
+        short[] e = new short[14];
         for (int i = 0; i < e.length; i++) {
-            for (int j = 0; j < e[i].length; j++) {
-                e[i][j] = calculateMatrix(z[i], x[j]);
+            e[i] = (short) (3 + i);
+        }
+
+        double[] x = new double[19];
+        for (int i = 0; i < x.length; i++) {
+            x[i] = (-3.0 + Math.random() * 14.0);
+        }
+
+        double[][] e1 = new double[14][19];
+        for (int i = 0; i < e1.length; i++) {
+            for (int j = 0; j < e1[i].length; j++) {
+                e1[i][j] = calculateMatrix(e[i], x[j]);
             }
         }
 
-        printMatrix(e);
+        printMatrix(e1);
     }
 
-    public static double calculateMatrix(short zi, double xj) {
-        if (zi == 14) {
-            return Math.asin(1.0 / Math.pow(Math.exp((4.0 / 2.0) / (5 + Math.abs(xj))), Math.pow(0.5 / (Math.sin(xj) - 1), 3)));
+    public static double calculateMatrix(short ei, double xj) {
+        if (ei == 4) {
+            return Math.log(Math.pow(Math.sin(Math.pow(((4.0 + Math.log(Math.abs(xj))) / 3.0) / 4.0, 2)), 2));
         }
-        else if (zi == 4 || zi == 8 || zi == 16 || zi == 18 || zi == 20) {
-            return Math.pow((Math.pow((2.0 * xj / 2.0), 2)) / (1 - Math.pow(Math.atan((xj + 1.5) / 7.0) / (Math.tan(xj) + 1), 3)), 2);
+        else if (ei == 3 || ei == 5 || ei == 7 || ei == 8 || ei == 9 || ei == 11 || ei == 12) {
+            return Math.pow((2.0 / 3.0) / Math.log(Math.pow(Math.tan(xj), 2)), 2);
         }
         else {
-            return Math.sin(Math.exp(Math.atan(Math.pow(((xj + 1.5) / 7), 2))));
+            return Math.pow(2.0 / Math.cbrt(Math.pow(Math.pow((1.0 / 4.0) * (2.0 / 3.0 - xj), xj), (1.0 / 4.0) * (Math.pow((1.0 / 4.0) * (1 - xj), 3) + 1))), 3);
         }
     }
 
-    public static void printMatrix(double[][] e) {
-        for (int i = 0; i < e.length; i++) {
-            for (int j = 0; j < e[i].length; j++) {
-                System.out.printf("%.4f ", e[i][j]);
+    public static void printMatrix(double[][] e1) {
+        for (int i = 0; i < e1.length; i++) {
+            for (int j = 0; j < e1[i].length; j++) {
+                System.out.printf("%.3f ", e1[i][j]);
             }
             System.out.println();
         }
