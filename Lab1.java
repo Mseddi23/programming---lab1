@@ -1,13 +1,13 @@
 public class Lab1 {
     public static void main(String[] args) {
 	
-	int n;
-	try {
-		n = Integer.parseInt(args[0]);
-	}
-	catch (NumberFormatException error) {
-		n = 14;
-	}
+		int n;
+		try {
+			n = Integer.parseInt(args[0]);
+		}
+		catch (NumberFormatException error) {
+			n = 14;
+		}	
         short[] e = new short[n];
         for (int i = 0; i < e.length; i++) {
             e[i] = (short) (3 + i);
